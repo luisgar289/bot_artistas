@@ -80,18 +80,14 @@ def analisis (image_path):
         prediction = model.predict(data)
         resultado = None
         for i in prediction:
-                    if i[0] > 0.43:
+                    if i[0] > 0.80:
                         resultado = "El Artista de tu imagen es Taylor Swift"
-                    elif i[1] > 0.43:
+                    elif i[1] > 0.80:
                         resultado = "El Artista de tu imagen es JeongHan"
-                    elif i[2] > 0.43:
+                    elif i[2] > 0.80:
                         resultado = "El Artista de tu imagen es Bad Bunny"
-                    elif i[0]:
+                    else:
                         resultado = "No soy tan listo como piensas, prueba con otra imagen"
-                    elif i[1]:
-                        resultado = "Podria ser JeongHan, pero la probabilidad no es suficiente. Usa otra imagen."
-                    elif i[2]:
-                        resultado = "Quizas es Bad Bunny, pero no es muy probable"
         print(prediction)
         return resultado
 
