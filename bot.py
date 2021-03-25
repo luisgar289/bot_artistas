@@ -99,7 +99,7 @@ def help(bot,update):
     try:
         message = "Puedo reconocer artistas como Taylor Swift, JeongHan y Bad Bunny"
         update.message.reply_text(message)
-        message = "Para una respuesta mas precisa, utiliza imagenes con el rostro centrado"
+        message = "Para una respuesta mas precisa, utiliza imagenes solamente con el rostro y de frente  y con buena calidad"
         update.message.reply_text(message)
     except Exception as e:
         print("Error 004 {}".format(e.args[0]))
