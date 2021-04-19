@@ -18,137 +18,28 @@ def start(bot,update):
 
 def echo(bot,update):
     try:
-        text = update.message.text
-        if text == "Taylor Swift":
-            taylor = "Muy bien hablemos de Taylor Swift"
-            update.message.reply_text(taylor)
-            pregunta = update.message.text
+        
+        def classify(text):
+            text = update.message.text
+            key = "417b5f90-9ed1-11eb-b4ba-2fbb5d54afa463763a57-4f98-44de-9c31-be4b40894c61"
+            url = "https://machinelearningforkids.co.uk/api/scratch/"+ key + "/classify"
 
-            def classify(text):
-                key = "417b5f90-9ed1-11eb-b4ba-2fbb5d54afa463763a57-4f98-44de-9c31-be4b40894c61"
-                url = "https://machinelearningforkids.co.uk/api/scratch/"+ key + "/classify"
+            response = requests.get(url, params={ "data" : text })
 
-                response = requests.get(url, params={ "data" : text })
+            if response.ok:
+                responseData = response.json()
+                topMatch = responseData[0]
+                return topMatch
+            else:
+                response.raise_for_status()
 
-                if response.ok:
-                    responseData = response.json()
-                    topMatch = responseData[0]
-                    return topMatch
-                else:
-                    response.raise_for_status()
-
-            demo = classify(pregunta)
+            demo = classify(text)
 
             label = demo["class_name"]
             confidence = demo["confidence"]
 
-            if label == "Album":
-                album = ""
-                update.message.reply_text(album)
+        print ("result: '%s' with %d%% confidence" % (label, confidence))
 
-            elif label == "Edad":
-                edad = ""
-                update.message.reply_text(edad)
-            
-            elif label == "Genero":
-                genero = ""
-                update.message.reply_text(genero)
-            
-            elif label == "Premios":
-                premio = ""
-                update.message.reply_text(premio)
-
-            elif label == "Extra":
-                extra = ""
-                update.message.reply_text(extra)
-
-        elif text == "Jeong Han":
-            han = "Pregunta sobre Jeong Han"
-            update.message.reply_text(han)
-            pregunta = update.message.text
-
-            def classify(text):
-                key = "417b5f90-9ed1-11eb-b4ba-2fbb5d54afa463763a57-4f98-44de-9c31-be4b40894c61"
-                url = "https://machinelearningforkids.co.uk/api/scratch/"+ key + "/classify"
-
-                response = requests.get(url, params={ "data" : text })
-
-                if response.ok:
-                    responseData = response.json()
-                    topMatch = responseData[0]
-                    return topMatch
-                else:
-                    response.raise_for_status()
-
-            demo = classify(pregunta)
-
-            label = demo["class_name"]
-            confidence = demo["confidence"]
-
-            if label == "Album":
-                album = ""
-                update.message.reply_text(album)
-
-            elif label == "Edad":
-                edad = ""
-                update.message.reply_text(edad)
-            
-            elif label == "Genero":
-                genero = ""
-                update.message.reply_text(genero)
-            
-            elif label == "Premios":
-                premio = ""
-                update.message.reply_text(premio)
-
-            elif label == "Extra":
-                extra = ""
-                update.message.reply_text(extra)
-        elif text == "Bad Bunny":
-            bunny = "Te contare un poco sobre Bad Bunny"
-            update.message.reply_text(bunny)
-            pregunta = update.message.text
-
-            def classify(text):
-                key = "417b5f90-9ed1-11eb-b4ba-2fbb5d54afa463763a57-4f98-44de-9c31-be4b40894c61"
-                url = "https://machinelearningforkids.co.uk/api/scratch/"+ key + "/classify"
-
-                response = requests.get(url, params={ "data" : text })
-
-                if response.ok:
-                    responseData = response.json()
-                    topMatch = responseData[0]
-                    return topMatch
-                else:
-                    response.raise_for_status()
-
-            demo = classify(pregunta)
-
-            label = demo["class_name"]
-            confidence = demo["confidence"]
-
-            if label == "Album":
-                album = ""
-                update.message.reply_text(album)
-
-            elif label == "Edad":
-                edad = ""
-                update.message.reply_text(edad)
-            
-            elif label == "Genero":
-                genero = ""
-                update.message.reply_text(genero)
-            
-            elif label == "Premios":
-                premio = ""
-                update.message.reply_text(premio)
-
-            elif label == "Extra":
-                extra = ""
-                update.message.reply_text(extra)
-        else:
-            mal = "Para saber mas de los artistas usa Taylor Swift, Bad Bunny o Jeong Han"
-            update.message.reply_text(mal)
     except Exception as e:
         print("Error 002 {}".format(e.args[0]))
 
