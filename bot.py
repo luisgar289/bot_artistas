@@ -46,11 +46,11 @@ def echo(bot,update): #Instruccion para responder preguntas
         #aqui evalua en que etiqueta se encuentra el texto enviado y responde segun la etiqueta
 
         if label == "Album":
-                ts1 = "Taylor Swift tiene un total de 11 album, de los cuales le pertenecen 4 (Taylor Swift, Fearless, Speak Now, Red, 1989, Reputation, Lover, Folklore, Evermore, Fearless (Taylor's Version)). "
+                ts1 = "Taylor Swift tiene un total de 11 album (Taylor Swift, Fearless, Speak Now, Red, 1989, Reputation, Lover, Folklore, Evermore, Fearless (Taylor's Version)). "
                 update.message.reply_text(ts1)
                 yh1 = "Jeong Han, es integrante del grupo SEVENTEEN, tienen un total de 3 album de estudio (Love & Letter, Teen, Age)"
                 update.message.reply_text(yh1)
-                bb1 = "Bad Bunny tiene un total de "
+                bb1 = "Bad Bunny tiene un total de 3 album (X 100pre, YHLQMDLG y El ultimo tour del mundo)."
                 update.message.reply_text(bb1)
 
         elif label == "Edad":
@@ -58,7 +58,7 @@ def echo(bot,update): #Instruccion para responder preguntas
                 update.message.reply_text(ts2)
                 yh2 = "Jeong Han nació el 4 de Octubre de 1995, por lo cual hoy en día tiene 25 años."
                 update.message.reply_text(yh2)
-                bb2 = "Bad Bunny nació el"
+                bb2 = "Bad Bunny nació el 10 de marzo de 1994, por lo que hasta el dia de hoy tiene 27 años."
                 update.message.reply_text(bb2)
                 
         elif label == "Genero":
@@ -66,7 +66,7 @@ def echo(bot,update): #Instruccion para responder preguntas
                 update.message.reply_text(ts3)
                 yh3 = "SEVENTEEN maneja una  gran variedad en géneros musicales, pero en los que resaltan más son Pop, Hip-Hop, Funk, R&B y EDM"
                 update.message.reply_text(yh3)
-                bb3 = "Bad Bunny maneja generos como "
+                bb3 = "Bad Bunny canta principalmente Trap latino, hip-hop, rap, reguetón, dancehall."
                 update.message.reply_text(bb3)
                 
         elif label == "Premios":
@@ -74,7 +74,7 @@ def echo(bot,update): #Instruccion para responder preguntas
                 update.message.reply_text(ts4)
                 yh4 = "SEVENTEEN a ganado un total de 102 premios, de los cuales los más importantes son los MAMA por Worldwide Favorite Artist (2017), Best OST (A-TEEN) (2018), Breakthrough Archivement (2019), Global Performer Artist (2020), Notable Achievement Artist (2020), 2 veces en Best Male Group Dance (2017, 2018),  3 veces en Worldwide Fan’s Choice Top 10 (2018, 2019, 2020)."
                 update.message.reply_text(yh4)
-                bb4 = "Bad Bunny a ganado un total de "
+                bb4 = "Bad Bunny a ganado un total de 79 premios de los cuales los mas importantes son Compositor del año(2020) y Grammy a mejor album pop latino o urbano(2021)."
                 update.message.reply_text(bb4)
 
         else:
@@ -82,7 +82,7 @@ def echo(bot,update): #Instruccion para responder preguntas
                 update.message.reply_text(ts5)
                 yh5 = "Jeong Han: Nació en Gangbuk-gu, Seúl, Corea del Sur. Tuvo un entrenamiento de 2 años y 2 meses. Es cantante, bailarín, modelo, MC y letrista. A compuesto 7 canciones para el grupo y su modelo a seguir es Teamin de SHINee. Es integrante del grupo SEVENTEEN, su posición es vocalista y bailarín, además él pertenece al Team Vocal "
                 update.message.reply_text(yh5)
-                bb5 = "Bad Bunny:"
+                bb5 = "Bad Bunny: Benito Antonio Martinez Ocasio nacio en Vega Baja, Puerto Rico. Su madre es Lysaurie Ocasio; tiene dos hermanos: Bernie y Bysael. Su disquera actual es Rimas Entertainment. Tiene un perro llamado Dachshund. Abandono la carrera de Comunicacion Audiovisual pra dedicarse a la musica. Su exitoso se debe rompe los esquemas de muchos cantes urbanos manifestándose en contra de la violencia de genero, las practicas de corrupción en su natal, Puerto Rico e innovar en sus generos. Su novia actual es Gabriela Berlingeri, con quien lleva una relacion de aproximadamente 3 años. Segun Celebrity Neth Worth Bad Bunny asciende a los 16 millones de dólares segun sus ganancias y bienes materiales. "
                 update.message.reply_text(bb5)
         
     except Exception as e:
